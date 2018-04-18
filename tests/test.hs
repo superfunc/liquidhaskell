@@ -55,7 +55,7 @@ myConsoleReporter = combineReporters consoleTestReporter loggingTestReporter
 main :: IO ()
 main = do unsetEnv "LIQUIDHASKELL_OPTS"
           -- We don't run tests in depedency order, so having stale
-          -- .liquid/*.hs.bspec files can causes problems.
+          -- .liquid/ *.hs.bspec files can causes problems.
           system "rm -r tests/pos/.liquid/"
           system "rm -r tests/neg/.liquid/"
           run =<< tests
